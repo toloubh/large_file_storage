@@ -49,6 +49,12 @@ $ git lfs track "*.tar,gz"
 ```
 Every file type you want to associate with Git LFS will need to be added with git lfs track. This command amends your repository's .gitattributes file and associates large files with Git LFS.
 
+*** Note: Since Git LFS 2.2.0 you can use git lfs migrate command.
+```
+git lfs migrate import --include="*.tar.gz"
+```
+After this, you should be able to push changes into origin.
+
 3. Add a file to the repository matching the extension you've associated:
 ```
 git add path/to/file.tar.gz && git commit -m "add file.tar.gz"
